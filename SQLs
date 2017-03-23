@@ -1,0 +1,12 @@
+-- Column Value with number of count in Table.
+
+SELECT ALIAS.COLUMN_A,COUNT(*) FROM TABLE ALIAS
+GROUP BY ALIAS.COLUMN_A
+HAVING COUNT(*) > 5;
+
+-- TABLE A value = null and TABLE B value is present. Count the Table B value which is not present in Table A.
+
+SELECT ALIAS_A.*, ALIAS_B.* FROM TABLEA ALIAS_A, TABLEB ALIAS_B
+WHERE ALIAS_B.PK = ALIAS_A.PK (+)
+AND ALIAS_B.PK (SELECT ALIAS_B.PK FROM FEW JOINED TABLES DEPEND ON SOME CONDITION)
+AND ALIAS_A.PK IS NULL;
