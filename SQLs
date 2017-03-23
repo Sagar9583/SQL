@@ -10,3 +10,10 @@ SELECT ALIAS_A.*, ALIAS_B.* FROM TABLEA ALIAS_A, TABLEB ALIAS_B
 WHERE ALIAS_B.PK = ALIAS_A.PK (+)
 AND ALIAS_B.PK (SELECT ALIAS_B.PK FROM FEW JOINED TABLES DEPEND ON SOME CONDITION)
 AND ALIAS_A.PK IS NULL;
+
+-- Insert into values (select from table)
+
+INSERT INTO table1 ( col1, col2, anyInt, someVarChar )
+SELECT  table2.col1, table2.col2, 1, 'char or string'
+FROM    table2
+WHERE   table2.PK = 1;
