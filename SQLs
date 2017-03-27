@@ -17,3 +17,7 @@ INSERT INTO table1 ( col1, col2, anyInt, someVarChar )
 SELECT  table2.col1, table2.col2, 1, 'char or string'
 FROM    table2
 WHERE   table2.PK = 1;
+
+-- Check all the triggers on table.
+
+SELECT * FROM ALL_TRIGGERS WHERE TABLE_NAME =  'NAME_OF_TABLE';
