@@ -21,3 +21,7 @@ WHERE   table2.PK = 1;
 -- Check all the triggers on table.
 
 SELECT * FROM ALL_TRIGGERS WHERE TABLE_NAME =  'NAME_OF_TABLE';
+
+--- Check all the table details
+
+SELECT * FROM ALL_TABLES AL WHERE AL.TABLE_NAME LIKE '%TABLENAME%';
