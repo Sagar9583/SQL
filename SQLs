@@ -25,3 +25,12 @@ SELECT * FROM ALL_TRIGGERS WHERE TABLE_NAME =  'NAME_OF_TABLE';
 --- Check all the table details
 
 SELECT * FROM ALL_TABLES AL WHERE AL.TABLE_NAME LIKE '%TABLENAME%';
+
+
+------Update few coulmns from different table or same table .. use Inner join depend on PK.
+
+UPDATE TABLE1 T1
+SET T1.COLMN1 = T2.COLMN2
+FROM T1
+INNER JOIN T2
+ON T1.PK=T2.PK;
