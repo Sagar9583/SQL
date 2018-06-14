@@ -34,3 +34,7 @@ SET T1.COLMN1 = T2.COLMN2
 FROM T1
 INNER JOIN T2
 ON T1.PK=T2.PK;
+
+--- Showing extra coulmn in result.
+
+select 'O or any name', a* from table;
