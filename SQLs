@@ -48,3 +48,17 @@ WHERE R_CONSTRAINT_NAME IN
        (SELECT CONSTRAINT_NAME
           FROM ALL_CONSTRAINTS
          WHERE TABLE_NAME = 'TABLE NAME');
+         
+--Comparing the two consecutive rows in oracle from same table
+select pk, name, date
+from (
+    select 
+        t.*, 
+        lag(date)  over(order by pk) lag_date,
+        lead(date) over(order by pk) lead_date  
+    from mytable t
+) t
+where lag_date <> date or lead_date <> date
+
+
+
